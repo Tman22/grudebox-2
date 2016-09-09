@@ -11,11 +11,21 @@ class Idea extends React.Component {
     this.props.removeIdea(this.props.id);
   }
 
-  handleQuality() {
-    if  
+  handleQuality(e) {
+    let idea = this.props
+    let upQuality = {'Swill': 'Okay', 'Okay': 'Super!', 'Super!': 'Super!'}
+    let downQuality = {'Swill': 'Swill', 'Okay': 'Swill', 'Super!': 'Okay'}
+    // this.props.handleQuality()
+    if(e.target.value === 'UP') {
+      return idea.quality = upQuality[idea.quality]
+    }
+    debugger
+    return idea.quality = downQuality[idea.quality];
   }
 
   render() {
+
+
     return(
       <section>
         <h1>{this.props.title}</h1>

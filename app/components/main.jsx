@@ -10,7 +10,7 @@ class Main extends React.Component {
     this.state = {ideas: ideas};
   }
   createIdea({body, title}) {
-    ideas.unshift({body, title, id: Date.now(), quality: 'Swell'})
+    ideas.unshift({body, title, id: Date.now(), quality: 'Swill'})
     this.setState({ideas: ideas });
   }
 
@@ -19,16 +19,17 @@ class Main extends React.Component {
     this.setState({ideas: ideas });
   }
 
-  handleQuality() {
-
-  }
+  // handleQuality() {
+  //   let upQuality = {'Swill': 'Okay', 'Okay': 'Super!', 'Super!': 'Super!'}
+  //   let downQuality = {'Swill': 'Swill', 'Okay': 'Swill', 'Super!': 'Okay'}
+  //   debugger
+  // }
 
   render() {
     const displayIdeas = ideas.map(idea => {
       return <Idea {...idea} key={idea.id}
               removeIdea={this.removeIdea}
-              upQuality={this.upQuality}
-              downQuality={this.downQuality}
+              handleQuality={this.handleQuality}
               />
     });
 
